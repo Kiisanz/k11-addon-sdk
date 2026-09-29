@@ -21,11 +21,13 @@ type BuildConfig struct {
 }
 
 type AddonAsset struct {
-	OS     string `json:"os"`
-	Arch   string `json:"arch"`
-	URL    string `json:"url"`
-	SHA256 string `json:"sha256"`
-	Size   int64  `json:"size"`
+	OS         string `json:"os"`
+	Arch       string `json:"arch"`
+	URL        string `json:"url"`
+	SHA256     string `json:"sha256"`
+	Size       int64  `json:"size"`
+	Format     string `json:"format,omitempty"`
+	Executable string `json:"executable,omitempty"`
 }
 
 type DistributionManifest struct {
@@ -100,6 +102,8 @@ func handleBuild() {
 			manifest.Assets[i].SHA256 = hash
 			manifest.Assets[i].Size = size
 			manifest.Assets[i].URL = fmt.Sprintf("https://github.com/%s/releases/download/v%s/%s", manifest.Repository, manifest.Version, tarName)
+			manifest.Assets[i].Format = "tar.gz"
+			manifest.Assets[i].Executable = binName
 			assetFound = true
 			break
 		}
@@ -107,11 +111,13 @@ func handleBuild() {
 
 	if !assetFound {
 		manifest.Assets = append(manifest.Assets, AddonAsset{
-			OS:     targetOS,
-			Arch:   targetArch,
-			URL:    fmt.Sprintf("https://github.com/%s/releases/download/v%s/%s", manifest.Repository, manifest.Version, tarName),
-			SHA256: hash,
-			Size:   size,
+			OS:         targetOS,
+			Arch:       targetArch,
+			URL:        fmt.Sprintf("https://github.com/%s/releases/download/v%s/%s", manifest.Repository, manifest.Version, tarName),
+			SHA256:     hash,
+			Size:       size,
+			Format:     "tar.gz",
+			Executable: binName,
 		})
 	}
 
