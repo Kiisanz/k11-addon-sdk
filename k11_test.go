@@ -8,7 +8,7 @@ import (
 	"time"
 
 	k11 "github.com/Kiisanz/k11-addon-sdk"
-	"github.com/Kiisanz/k11-addon-sdk/ipc"
+	"github.com/Kiisanz/k11-addon-sdk/pkg/ipc"
 )
 
 type TestInput struct {

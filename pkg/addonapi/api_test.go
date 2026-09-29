@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/Kiisanz/k11-addon-sdk/addonapi"
+	"github.com/Kiisanz/k11-addon-sdk/pkg/addonapi"
 )
 
 func TestManifestEditorProperties(t *testing.T) {

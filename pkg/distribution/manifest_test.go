@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/Kiisanz/k11-addon-sdk/distribution"
+	"github.com/Kiisanz/k11-addon-sdk/pkg/distribution"
 )
 
 var goldenJSON = []byte(`{

@@ -1,6 +1,6 @@
 package k11
 
-import "github.com/Kiisanz/k11-addon-sdk/addonapi"
+import "github.com/Kiisanz/k11-addon-sdk/pkg/addonapi"
 
 type InputBuilder interface {
 	Build() (addonapi.NodeInput, addonapi.EditorProperty)
