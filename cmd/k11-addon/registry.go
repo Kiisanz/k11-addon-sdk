@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-const registryRepo = "Kiisanz/k11-registry"
+const registryRepo = "Kiisanz/k11-addon-registry"
 
 func submitToRegistry(token string, manifest DistributionManifest) {
 	fmt.Printf("[INFO] Submitting %s to central registry (%s)...\n", manifest.ID, registryRepo)
