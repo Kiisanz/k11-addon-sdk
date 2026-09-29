@@ -20,11 +20,9 @@ func main() {
 		fmt.Println("Scaffolding new K11 Addon project...")
 		// TODO: Implement init logic
 	case "build":
-		fmt.Println("Building K11 Addon and generating distribution.json...")
-		// TODO: Implement build logic
+		handleBuild()
 	case "publish":
-		fmt.Println("Publishing K11 Addon to marketplace...")
-		// TODO: Implement publish logic reading marketplace metadata
+		handlePublish()
 	default:
 		fmt.Printf("Unknown command: %s\n", command)
 		printUsage()
