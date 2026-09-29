@@ -35,6 +35,12 @@ type DistributionManifest struct {
 	SchemaVersion int           `json:"schemaVersion"`
 	ID            string        `json:"id"`
 	Version       string        `json:"version"`
+	Name          string        `json:"name,omitempty"`
+	Description   string        `json:"description,omitempty"`
+	Icon          string        `json:"icon,omitempty"`
+	Category      string        `json:"category,omitempty"`
+	Repository    string        `json:"repository,omitempty"`
+	BuildConfig   map[string]interface{} `json:"buildConfig,omitempty"`
 	API           Compatibility `json:"api"`
 	Assets        []AddonAsset  `json:"assets"`
 }
